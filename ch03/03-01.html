@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="test">
+        {{name}}
+    </div>
+    <script type="text/javascript">
+        var model = {
+            name: "홍길동"
+        }
+
+        var vm = new Vue({
+            el: "#test",
+            data: model
+        });
+    </script>
+</body>
+
+</html>
