@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>04-06</title>
+
+<head>
+    <style>
+        #outer {
+            width: 200px;
+            height: 200px;
+            border: solid 2px black;
+            background-color: aqua;
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            padding: 10px 10px 10px 10px;
+        }
+        
+        #inner {
+            width: 100px;
+            height: 100px;
+            border: solid 2px black;
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="example">
+        <div id="outer" v-on:click.stop="outerClick">OUTTER
+            <div id="inner" v-on:click.stop="innerClick">INNER</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#example",
+        methods: {
+            outerClick: function(e) {
+                console.log("### OUTER CLICK ###");
+                console.log("Event Phase : ", e.eventPhase);
+                console.log("Current Target : ", e.currentTarget);
+                console.log("Target : ", e.target);
+                //일반적으로 이벤트 버블링은 막아야한다.
+                //상위 요소로의 이벤트의 전파(Propagation)을 막는다.
+
+                //e.stopPropagation();
+                //대신 이벤트 수식어로 대체할 수 있다.
+                //.stop : 이벤트 전파를 중단시킨다.
+                //.capture : CAPTUREING_PHASE 단계에서만 이벤트를 발생합니다.
+                //.self : RASING_PHASE 단계일 때만 이벤트가 발생합니다.
+                //@click == v-on:click
+
+            },
+            innerClick: function(e) {
+                console.log("### INNER CLICK ###");
+                console.log("Event Phase : ", e.eventPhase);
+                console.log("Current Target : ", e.currentTarget);
+                console.log("Target : ", e.target);
+                //일반적으로 이벤트 버블링은 막아야한다.
+                //상위 요소로의 이벤트의 전파(Propagation)을 막는다.
+
+                //e.stopPropagation();
+                //.stop : 이벤트 전파를 중단시킨다.
+                //.capture : CAPTUREING_PHASE 단계에서만 이벤트를 발생합니다.
+                //.self : RASING_PHASE 단계일 때만 이벤트가 발생합니다.
+                //@click == v-on:click
+            }
+        },
+    })
+</script>
+
+</html>
