@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>06-04</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<template id="helloTemplate">
+    <div>hello world!!</div>
+</template>
+<script type="text/javascript">
+    //Vue 텀포넌트의 template옵션에 템플릿 문자열을 사용
+    //이와 같은 방식을 인라인 템플릿이라고 한다.
+    //권장 X
+    Vue.component('hello-component', {
+        template: '#helloTemplate'
+    })
+</script>
+
+<body>
+    <div id="app">
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+        <hello-component></hello-component>
+    </div>
+</body>
+<script type="text/javascript">
+    Vue.config.devtools = true;
+    //크롬 브라우저에 설치한  Vue devtools를 사용하기위해
+    //Vue.config.devtools 전역값을 true로 설정
+    //Vue devtools는 반드시 웹서버를 통해서
+    //실행해야만 사용할 수 있다
+    //추가 적으로 live-server라는 도구를 설치해야한다(vscode)
+    var v = new Vue({
+        el: "#app"
+    });
+</script>
+
+</html>
