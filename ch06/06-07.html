@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>06-07</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<script type="text/javascript">
+    Vue.component('option-component', {
+        template: '<option>hello</option>'
+    })
+</script>
+
+<body>
+    <div id="app">
+        <select>
+            <option is="option-component"></option>
+            <option is="option-component"></option>
+</body>
+<script type="text/javascript">
+    Vue.config.devtools = true;
+    var v = new Vue({
+        el: "#app"
+    })
+</script>
+<!-- 
+    <select>태그 안에서 <option-component>라는 태그를 사용할 수 있다라는 것이
+    브라우저에 등록되어 있지 않다.
+    브라우저는 이 태그들을 구문 분석하는 작업을 먼저 수행한 후  Vue 컴포넌트 렌더링을 한다.
+    구문 분석 단계에서 DOM 요소가 올바르지 않다고 판단하기 때문에,
+    제대로 렌더링하지 못한다.
+
+    이 문제를 해결하기 위해서 is특성(Attribute)을 이용한다.
+    is 특성은 custom elements 인듯 하다.
+
+    <script type="text/x-template"> 태그 안에서 사용되거나
+    .vue 확장자를 사용하는 다일 파일 컴포넌트를 작성하는 경우에는
+    굳이 is특성을 사용하지 않아도 된다.
+    <template> 태그를 사용할 때는 is 특성을 사용해야 하므로 주의해야한다.
+ -->
+
+</html>
