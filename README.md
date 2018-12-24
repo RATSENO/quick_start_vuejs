@@ -1,2 +1,2 @@
 # quick_start_vuejs
-Quick Start vuejs 책 공부
+Quick Start vuejs 예제 
