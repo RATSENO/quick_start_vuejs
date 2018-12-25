@@ -1,5 +1,9 @@
-# todolistapp
-
+# todolistapp  
+-vue init webpack-simple todolistapp  
+-cd  todolistapp  
+-npm install  
+  
+  
 > A Vue.js project
 
 ## Build Setup
