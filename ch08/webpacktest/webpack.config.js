@@ -13,8 +13,7 @@ module.exports = {
     //    main : __dirname + '/src/index.js',
     //    app : __dirname + '/src/main.js'
     // }
-    //
-    //프로젝트의 디렉터리(__dirname)와 문자열로 전달된 경로를 조합하여 결로를 지정한다.
+    //프로젝트의 디렉터리(__dirname)와 문자열로 전달된 경로를 조합하여 경로를 지정한다.
     output: {
         path: __dirname + '/public/dist',
         filename: '[name].js',
