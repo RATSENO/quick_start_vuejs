@@ -3,7 +3,7 @@ module.exports = {
     entry: {
         main: __dirname + '/src/index.js'
     },
-    // 처음 로드하는 파일을 지정한다. 진입 파일은 다일 파일로 지정할 수도 있고,
+    // 처음 로드하는 파일을 지정한다. 진입 파일은 단일 파일로 지정할 수도 있고,
     // 여러 개의 파일을 지정할 수도 있다. 여러 개의 진입 파일을 지정할 때는 객체 형태로 지정하고
     // 단일 진입 파일일 때는 문자열로 파일의 경로를 지정한다.
     // [단일 진입 파일인 경우]
@@ -13,8 +13,7 @@ module.exports = {
     //    main : __dirname + '/src/index.js',
     //    app : __dirname + '/src/main.js'
     // }
-    //
-    //프로젝트의 디렉터리(__dirname)와 문자열로 전달된 경로를 조합하여 결로를 지정한다.
+    //프로젝트의 디렉터리(__dirname)와 문자열로 전달된 경로를 조합하여 경로를 지정한다.
     output: {
         path: __dirname + '/public/dist',
         filename: '[name].js',
