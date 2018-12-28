@@ -13,6 +13,9 @@
           <li>
             <a href="#" @click="changeMenu('contact')">Contact</a>
           </li>
+          <li>
+            <a href="#" @click="changeMenu('todo')">Todo</a>
+          </li>          
         </ul>
       </nav>
     </div>
@@ -27,9 +30,10 @@
 import Home from './components/Home.vue';
 import About from './components/About.vue';
 import Contact from './components/Contact.vue';
+import Todo from './components/Todo.vue';
 
 export default {
-  components : {Home, About, Contact},
+  components : {Home, About, Contact, Todo},
   data () {
     return {
       currentView : 'home'
