@@ -39,6 +39,10 @@
 
 <script>
 import axios from 'axios';
+//main.js에 import 하였기 때문에 
+// fetchContactOne : function(){
+//     this.$axios.get('/api/contacts/' + this.no)
+//도 정상 작동한다.
 
 export default {
     name : "app",
@@ -93,7 +97,8 @@ export default {
             })
         },
         fetchContactOne : function(){
-            axios.get('/api/contacts/' + this.no)
+            //axios.get('/api/contacts/' + this.no)
+            this.$axios.get('/api/contacts/' + this.no)
             .then((response) => {
                 console.log(response);
                 this.result = response.data;

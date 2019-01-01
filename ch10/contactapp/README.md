@@ -2,7 +2,9 @@
 ```  
 vue init webpack contactapp  
 npm install  
-npm install --save axios
+npm install --save axios  
+npm install --save vuejs-paginate
+npm install --save es6-promise
 ```  
 > A Vue.js project
 
