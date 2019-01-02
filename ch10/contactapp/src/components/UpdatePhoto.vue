@@ -35,7 +35,7 @@ export default {
             eventBus.$emit("cancel");
         },
         photoSubmit : function(){
-            var filee = this.$ref.photofile.files[0];
+            var file = this.$refs.photofile.files[0];
             eventBus.$emit('updatePhoto', this.contact.no, file);
         }
     },
