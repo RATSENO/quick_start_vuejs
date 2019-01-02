@@ -63,6 +63,11 @@ export default {
     padding:40px 0px 0px 0px;
     text-align: left; 
     }
+/* 
+    relative (상대위치)
+    기본 위치(static으로 지정되었을 때의 위치)를 기준으로 좌표 프로퍼티(top, bottom, left, right)를 사용하여 위치를 이동시킨다.
+    static을 선언한 요소와 relative를 선언한 요소의 차이점은 좌표 프로퍼티의 동작 여부뿐이며 그외는 동일하게 동작한다.
+ */
 #example { 
     margin:10px auto; 
     max-width: 820px; 
@@ -77,6 +82,11 @@ export default {
 #example .short{ 
     width: 50%; 
     }
+/* 
+    box-sizing 프로퍼티는 width, height 프로퍼티의 대상 영역을 변경할 수 있다.
+    content-box : width, height 프로퍼티 값은 content 영역을 의미한다. (기본값)
+    border-box : width, height 프로퍼티 값은 content 영역, padding, border가 포함된 값을 의미한다.
+ */
 #example input, textarea, select{ 
     box-sizing: border-box;
     border:1px solid #BEBEBE; 
@@ -92,6 +102,16 @@ export default {
     color:yellow; 
     background-color: purple; 
     }
+/* 
+    :nth-child(n)
+    셀렉터에 해당하는 모든 요소 중 앞에서 n번째 자식인 요소를 선택한다. 
+
+    :nth-last-child(n)
+    셀렉터에 해당하는 모든 요소 중 뒤에서 n번째 자식인 요소를 선택한다.
+*/
+#list th:nth-child(5n), #list td:nth-child(5n) { 
+    width:150px; 
+    }
 #list th:nth-child(5n+1), #list td:nth-child(5n+1) { 
     width:200px; 
     }
@@ -103,9 +123,6 @@ export default {
     }
 #list th:nth-child(5n+4), #list td:nth-child(5n+4) { 
     width:60px; 
-    }
-#list th:nth-child(5n), #list td:nth-child(5n) { 
-    width:150px; 
     }
 #list th { 
     padding:10px 5px 10px 5px; 
