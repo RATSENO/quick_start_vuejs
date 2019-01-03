@@ -95,8 +95,12 @@ export default{
     computed: mapState(['todolist']),
     methods: _.extend({
         checked : function(done) {
-            if(done) return { checked:true };
-            else return { checked:false };
+            if(done) return { 
+                checked:true 
+            };
+            else return { 
+                checked:false 
+            };
         }
     },
     mapMutations([

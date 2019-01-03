@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        todolist: [{
+        todolist: [
+            {
                 todo: "영화보기",
                 done: false
             },
