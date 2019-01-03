@@ -6,7 +6,7 @@ ul {
     margin: 0; 
     padding: 0; 
 }
-ul li { 
+ul li {
     cursor: pointer;
     position: relative; 
     padding: 8px 8px 8px 40px;
