@@ -5,13 +5,16 @@
       <nav>
         <ul>
           <li>
-            <router-link to="/home">Home</router-link>
+            <!-- <router-link to="/home">Home</router-link> -->
+            <router-link v-bind:to="{name : 'home'}">Home</router-link>
           </li>
           <li>
-            <router-link to="/about">About</router-link>
+            <!-- <router-link to="/about">About</router-link> -->
+            <router-link v-bind:to="{name : 'about'}">About</router-link>
           </li>
           <li>
-            <router-link to="/contacts">Contacts</router-link>
+            <!-- <router-link to="/contacts">Contacts</router-link> -->
+            <router-link v-bind:to="{name : 'contacts'}">Contact</router-link>
           </li>          
         </ul>
       </nav>
@@ -37,19 +40,23 @@ const router = new VueRouter({
     },
     {
       path : '/home',
-      component : Home
+      component : Home,
+      name : 'home'
     },
     {
       path : '/about',
-      component : About
+      component : About,
+      name : 'about'
     },
     {
       path : '/contacts',
       component : Contacts,
+      name : 'contacts',
       children : [
         {
           path : ':no',
-          component : ContactByNo
+          component : ContactByNo,
+          name : 'contactbyno'
         }
       ]
     }
