@@ -32,11 +32,11 @@ export default {
                         no : no
                     }
                 }, function(){
-                    console.log("/contacts/" + no + "로 이동 완료!")
+                    console.log("/contacts/" + no + "로 이동 완료!");
                 });
             }
         }
-    },
+    }
 }
 </script>
 <style>
