@@ -33,6 +33,7 @@ import ContactByNo from './components/ContactByNo.vue'
 import VueRouter from 'vue-router';
 
 const router = new VueRouter({
+  mode : 'history',
   routes : [
     {
       path : '/',
