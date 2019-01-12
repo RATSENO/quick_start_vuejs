@@ -45,12 +45,19 @@ const router = new VueRouter({
     },
     {
       path : '/contacts',
-      component : Contacts
-    },
-    {
-      path : '/contacts/:no',
-      component : ContactByNo
+      component : Contacts,
+      children : [
+        {
+          path : ':no',
+          component : ContactByNo
+        }
+      ]
     }
+    // ,
+    // {
+    //   path : '/contacts/:no',
+    //   component : ContactByNo
+    // }
   ]
 });
 
