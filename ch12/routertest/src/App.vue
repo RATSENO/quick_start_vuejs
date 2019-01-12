@@ -56,7 +56,15 @@ const router = new VueRouter({
         {
           path : ':no',
           component : ContactByNo,
-          name : 'contactbyno'
+          name : 'contactbyno',
+          beforeEnter : (to, from, next)=>{
+            console.log("@@ beforeEnter! : " + from.path + "-->" + to.path)
+            if(from.path.startsWith("/contacts")){
+              next();
+            }else{
+              next("/home");
+            }
+          }
         }
       ]
     }
@@ -66,7 +74,21 @@ const router = new VueRouter({
     //   component : ContactByNo
     // }
   ]
-});
+})
+
+//전역 수준의 보호 기능을 사용하기 위해
+// VueRouter 객체에 beforeEach, afterEach 메서드를 추가한다
+// beforeEach() 보호 메서드에서는
+// next()함수를 반드시 호출해야 다음의 훅으로 진행한다
+// next()함수를 호출하지 않으면 내비게이션이 진행되지 않는다.
+router.beforeEach((to, from, next)=>{
+  console.log("** beforeEach!!")
+  next();
+})
+
+router.afterEach((to, from)=>{
+  console.log("** afterEach!!")
+})
 
 export default{
   name : 'app',
